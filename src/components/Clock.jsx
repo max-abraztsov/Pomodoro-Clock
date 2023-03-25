@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Timer = ({minutes, seconds}) => {
+const Clock = ({minutes, seconds}) => {
 
     if (minutes < 10) minutes = "0" + minutes;
     if (seconds < 10) seconds = "0" + seconds; 
@@ -12,4 +12,4 @@ const Timer = ({minutes, seconds}) => {
     );
 };
 
-export default Timer;
+export default Clock;
