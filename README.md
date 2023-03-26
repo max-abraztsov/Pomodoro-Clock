@@ -6,6 +6,8 @@ This is a React-based Pomodoro Clock application. It is designed to help users w
 
 To get started with this application, simply clone this repository onto your local machine and run the following commands:
 
+### `npm install --save react-tabs`
+
 ### `npm start`
 
 This will install all the necessary dependencies and start the application on your local server.
@@ -18,7 +20,7 @@ Once you have the application running, simply select the duration of your Pomodo
 
 This application was built using React, and also utilizes the following libraries:
 
-* react-router-dom
+* react-tabs
 
 ## Contributing
 If you would like to contribute to this project, please feel free to fork this repository and submit a pull request.
