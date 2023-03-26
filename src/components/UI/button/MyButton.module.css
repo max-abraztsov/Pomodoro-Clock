@@ -1,0 +1,36 @@
+.myButton{
+    position:relative;
+    left:0;
+    top:0;
+    z-index:2;
+    font-size: 30px;
+    font-weight: 600;
+    color: #f3f8f4;
+    border: 0px solid;
+    border-radius: 10px;
+    background-color: #55828B;
+    padding: 10px 40px;
+    margin-bottom:20px;
+    transition: 0.1s;
+}
+
+.myButton:hover{
+    top:7px;
+    transition: 0.2s;
+}
+
+.buttonBackground{
+    position:absolute;
+    top:7px;
+    left:0;
+    z-index: 1;
+    width:174px;
+    height:66px;
+    border-radius: 10px;
+    background-color: #2a5158;
+}
+.buttonBlock{
+    position:relative;
+    top:0;
+    left: 0;
+}

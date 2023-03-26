@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MyInput = ({getTime, value}) => {
+const MyInput = ({getTime, value, id}) => {
     return (
-        <input type="number"  value={value} onChange={getTime} />
+        <input id={id} type="number"  value={value} onChange={getTime} />
     );
 };
 

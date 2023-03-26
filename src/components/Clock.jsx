@@ -6,7 +6,7 @@ const Clock = ({minutes, seconds}) => {
     if (seconds < 10) seconds = "0" + seconds; 
 
     return (
-        <div>
+        <div className='clock'>
             {minutes}:{seconds}
         </div>
     );
