@@ -7,30 +7,51 @@
     box-sizing: border-box;
 }
 
+#root{
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C9E4CA;
+}
+
 .clock{
     font-size: 50px;
     font-weight: 600;
     color: #55828B;
 }
 
-.timerBlock{
+.timer{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
     width: 340px;
     height: 250px;
-    
 }
 
-#focus{
-    background-color: #C9E4CA;
+.tabsAndTimers{
+    display:flex;
+    justify-content:center;
+    width:440px;
+    padding:20px 0;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-#short{
-    background-color: #D4F0B9;
+.activeTab{
+    background-color: rgba( 0, 0 , 0, 0.2);
+    outline: none;
 }
 
-#long{
-    background-color: #BCD3C6;
+.tabList{
+    display:flex;
+    justify-content: center;
+}
+
+.tabItem{
+    list-style: none;
+    padding: 1px 8px;
+    border-radius: 5px;
 }

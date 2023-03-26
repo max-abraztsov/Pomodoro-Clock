@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MyInput from "./components/UI/input/MyInput";
-import Timer from "./components/Timer";
 import "./styles/style.css";
+import AllTimers from "./components/AllTimers";
 
 function App() {
 
@@ -24,11 +24,7 @@ function App() {
         value={timeSettings.long} 
         getTime={ e => setTimeSettings({...timeSettings, long: e.target.value}) }/>
 
-      <Timer id="focus" setting={timeSettings.focus} />
-      <Timer id="short" setting={timeSettings.short} />
-      <Timer id="long" setting={timeSettings.long} />
-
-      
+      <AllTimers settings={timeSettings}/>
     </div>
   );
 }

@@ -46,7 +46,7 @@ const Timer = ({setting, id}) => {
     }
 
     return (
-        <div id={id} className='timerBlock'>
+        <div id={id} className='timer'>
             <Clock minutes={time.minutes} seconds={time.seconds}/>
             <MyButton action={toggleStateOfButton}>{buttonState.text}</MyButton>
         </div>
