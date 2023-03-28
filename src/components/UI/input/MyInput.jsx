@@ -1,8 +1,9 @@
 import React from 'react';
+import classes from './MyInput.module.css';
 
 const MyInput = ({getTime, value, id}) => {
     return (
-        <input id={id} type="number"  value={value} onChange={getTime} />
+        <input className={classes.myInput} id={id} type="number"  value={value} onChange={getTime} />
     );
 };
 

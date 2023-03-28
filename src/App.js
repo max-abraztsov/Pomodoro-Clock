@@ -4,26 +4,26 @@ import "./styles/style.css";
 import AllTimers from "./components/AllTimers";
 
 function App() {
-
   // User time settings
-  const [timeSettings, setTimeSettings] = useState({
-    focus: 25,
-    short: 5,
-    long: 10,
-  }) 
+  const [timeSettings, setTimeSettings] = useState({focus: 25, short: 5, long: 10}); 
 
   return (
     <div className="App">
-      <MyInput 
-        value={timeSettings.focus} 
-        getTime={ e => setTimeSettings({...timeSettings, focus: e.target.value}) }/>
-      <MyInput 
-        value={timeSettings.short} 
-        getTime={ e => setTimeSettings({...timeSettings, short: e.target.value}) }/>
-      <MyInput 
-        value={timeSettings.long} 
-        getTime={ e => setTimeSettings({...timeSettings, long: e.target.value}) }/>
-
+      <div className="settings__items-inputs">
+        <h3>Time (minutes)</h3>
+        <p>Pomodoro:</p>
+        <MyInput 
+          value={timeSettings.focus} 
+          getTime={ e => setTimeSettings({...timeSettings, focus: e.target.value}) }/>
+        <p>Short Break:</p>
+        <MyInput 
+          value={timeSettings.short} 
+          getTime={ e => setTimeSettings({...timeSettings, short: e.target.value}) }/>
+        <p>Long Break:</p>
+        <MyInput 
+          value={timeSettings.long} 
+          getTime={ e => setTimeSettings({...timeSettings, long: e.target.value}) }/>
+      </div>
       <AllTimers settings={timeSettings}/>
     </div>
   );

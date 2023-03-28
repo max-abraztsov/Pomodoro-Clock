@@ -17,8 +17,21 @@
 }
 
 .clock{
-    font-size: 50px;
+    font-size: 90px;
     font-weight: 600;
+    color: #55828B;
+}
+
+.settings__items-inputs{
+    display:flex;
+    flex-direction:column;
+    width: 150px;
+}
+
+
+
+
+.settings__items-inputs h3, p{
     color: #55828B;
 }
 
