@@ -25,11 +25,8 @@
 .settings__items-inputs{
     display:flex;
     flex-direction:column;
-    width: 150px;
+    width: 100%;
 }
-
-
-
 
 .settings__items-inputs h3, p{
     color: #55828B;

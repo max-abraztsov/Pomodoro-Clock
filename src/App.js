@@ -1,29 +1,26 @@
 import React, { useState } from "react";
-import MyInput from "./components/UI/input/MyInput";
 import "./styles/style.css";
 import AllTimers from "./components/AllTimers";
+import Settings from "./components/Settings";
+import SimpleButton from "./components/UI/simpleButton/SimpleButton";
 
 function App() {
   // User time settings
   const [timeSettings, setTimeSettings] = useState({focus: 25, short: 5, long: 10}); 
 
+  const [visible, setVisible] = useState(false);
+
   return (
     <div className="App">
-      <div className="settings__items-inputs">
-        <h3>Time (minutes)</h3>
-        <p>Pomodoro:</p>
-        <MyInput 
-          value={timeSettings.focus} 
-          getTime={ e => setTimeSettings({...timeSettings, focus: e.target.value}) }/>
-        <p>Short Break:</p>
-        <MyInput 
-          value={timeSettings.short} 
-          getTime={ e => setTimeSettings({...timeSettings, short: e.target.value}) }/>
-        <p>Long Break:</p>
-        <MyInput 
-          value={timeSettings.long} 
-          getTime={ e => setTimeSettings({...timeSettings, long: e.target.value}) }/>
-      </div>
+      <SimpleButton action={() => setVisible(true)}>Settings</SimpleButton>
+      <Settings 
+      settings={timeSettings} 
+      modal={visible}
+      setModal={setVisible}
+      getFocus={(e) => setTimeSettings({...timeSettings, focus : e.target.value})}
+      getShort={(e) => setTimeSettings({...timeSettings, short : e.target.value})}
+      getLong={(e) => setTimeSettings({...timeSettings, long : e.target.value})}
+      ></Settings>
       <AllTimers settings={timeSettings}/>
     </div>
   );
