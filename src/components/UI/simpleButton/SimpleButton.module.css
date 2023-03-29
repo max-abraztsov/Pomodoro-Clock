@@ -1,13 +1,9 @@
 .myButton{
-    position:relative;
-    left:0;
-    top:0;
-    z-index:2;
     font-size: 12px;
     font-weight: 500;
     color: #f3f8f4;
     border: 0px solid;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #55828B;
     padding:5px 10px;
     margin-bottom:10px;
@@ -17,10 +13,4 @@
 .myButton:hover{
     transform: scale(1.05);
     transition: 0.2s;
-}
-
-.buttonBlock{
-    position:relative;
-    top:0;
-    left: 0;
 }

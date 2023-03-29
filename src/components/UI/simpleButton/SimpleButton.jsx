@@ -7,7 +7,6 @@ const SimpleButton = ({children, action}) => {
             <button className={classes.myButton} onClick={action}>
                 {children}
             </button>
-            
         </div>
     );
 };

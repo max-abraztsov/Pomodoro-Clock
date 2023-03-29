@@ -2,14 +2,14 @@ import React from 'react';
 import MyModal from './UI/modal/MyModal';
 import MyInput from './UI/input/MyInput';
 
-
+// Modal this all settings
 const Settings = ({settings, modal, setModal, getFocus, getShort, getLong}) => {
     return (
         <div>
             <MyModal
-            visible={modal}
-            setVisible={setModal}
-            >
+                visible={modal}
+                setVisible={setModal}
+                >
                 <div className="settings__items-inputs">
                     <h3>Time (minutes)</h3>
                     <p>Pomodoro:</p>
