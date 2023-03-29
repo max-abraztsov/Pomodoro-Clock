@@ -2,7 +2,7 @@ import React from 'react';
 import MyModal from './UI/modal/MyModal';
 import MyInput from './UI/input/MyInput';
 
-// Modal this all settings
+// Modal with all settings
 const Settings = ({settings, modal, setModal, getFocus, getShort, getLong}) => {
     return (
         <div>

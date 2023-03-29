@@ -22,6 +22,19 @@
     color: #55828B;
 }
 
+.clock span{
+    display:inline-block;
+    width:115px;
+}
+
+.clock__minutes{
+    text-align:right;
+}
+
+.clock__seconds{
+    text-align:left;
+}
+
 .settings__items-inputs{
     display:flex;
     flex-direction:column;
@@ -64,4 +77,24 @@
     list-style: none;
     padding: 1px 8px;
     border-radius: 5px;
+}
+
+.task{
+    display:flex;
+    align-items:flex-start;
+    background-color:#55828B;
+    border-radius: 10px;
+}
+.task input{
+    margin-top:8px;
+    width:15px;
+}
+.task__text{
+    margin-left:10px;
+}
+.task__title{
+    color:white;
+}
+.task__note{
+    color:white;
 }
