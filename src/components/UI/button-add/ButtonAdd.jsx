@@ -1,10 +1,11 @@
 import React from 'react';
+import classes from "./ButtonAdd.module.css";
 
-const ButtonAdd = () => {
+const ButtonAdd = ({children}) => {
     return (
-        <div>
-            
-        </div>
+        <button className={classes.task__button_add}>
+            <span  className={classes.task__button_add_inner}>{children}</span>
+        </button>
     );
 };
 

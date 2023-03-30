@@ -1,0 +1,41 @@
+
+
+.task__custom_checkbox{
+    display: inline-block;
+    position:relative;
+    top: 6px;
+    left:0;
+    width:18px;
+    height:18px;
+    border: 0 solid black;
+    border-radius: 3px;
+    background-color: white;
+    transition:.2s;
+}
+
+.task__custom_checkbox::before{
+    content: "";
+    position: absolute;
+    background-image: url("../../../assets/tick.svg");
+    background-size:18px 18px;
+    top:calc(50% - 9px);
+    left:calc(50% - 9px);
+    display:block;
+    width:18px;
+    height:18px;
+    border-radius: 2px;
+    background-color: rgb(90, 182, 90);
+    opacity:0;
+    transition:.2s;
+}
+
+.task__custom_checkbox:hover{
+    transition:.2s;
+    background-color: rgb(150, 212, 150);
+    transform:scale(1.1);
+}
+
+#checkbox_done:checked + .task__custom_checkbox::before{
+    opacity:1;
+    transition:.2s;
+}

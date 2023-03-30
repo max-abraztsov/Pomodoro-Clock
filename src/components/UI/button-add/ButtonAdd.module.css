@@ -1,0 +1,36 @@
+.task__button_add{
+    width:100%;
+    position:relative;
+    top:0;
+    left:0;
+    padding: 20px 0 20px 18px;
+    border: 4px dashed #2a5158;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-weight: 600;
+    font-size: 13px;
+    color:white;
+    transition: .2s;
+}
+
+.task__button_add:hover{
+    transition: .2s;
+    transform: scale(1.03);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.task__button_add_inner::before{
+    content: "";
+    display:inline-block;
+    position:absolute;
+    top:calc(50% - 10px);
+    left:calc(50% - 40px);
+    background-image: url("../../../assets/plus-add.svg");
+    background-size:18px 18px;
+    height:18px;
+    width: 18px;
+}
+
+.active{
+    display:block;
+}

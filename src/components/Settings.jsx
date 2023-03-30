@@ -15,15 +15,18 @@ const Settings = ({settings, modal, setModal, getFocus, getShort, getLong}) => {
                     <p>Pomodoro:</p>
                     <MyInput 
                         value={settings.focus} 
-                        getTime={getFocus}/>
+                        getTime={getFocus}
+                        type="number"/> 
                     <p>Short Break:</p>
                     <MyInput 
                         value={settings.short} 
-                        getTime={getShort}/>
+                        getTime={getShort}
+                        type="number"/>
                     <p>Long Break:</p>
                     <MyInput 
                         value={settings.long} 
-                        getTime={getLong}/>
+                        getTime={getLong}
+                        type="number"/>
                 </div>
             </MyModal>
         </div>

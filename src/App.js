@@ -4,6 +4,8 @@ import AllTimers from "./components/AllTimers";
 import Settings from "./components/Settings";
 import SimpleButton from "./components/UI/simpleButton/SimpleButton";
 import Task from "./components/Task";
+import ButtonAdd from "./components/UI/button-add/ButtonAdd";
+import MyInput from "./components/UI/input/MyInput";
 
 function App() {
   // User time settings
@@ -15,6 +17,15 @@ function App() {
     {state: false, title: "Pallet project", note: "Rewrite the code written in the project 'test-react'"},
     {state: false, title: "Kanban", note: "Find a project with a kanban board and redo it"},
   ]);
+
+  const [editor, setEditor] = useState(false);
+
+  function openEditor(){
+    setEditor(true)
+    if(editor){
+      
+    }
+  }
 
   return (
     <div className="App">
@@ -28,13 +39,19 @@ function App() {
         getLong={(e) => setTimeSettings({...timeSettings, long : e.target.value})}
       ></Settings>
       <AllTimers settings={timeSettings}/>
+
       <h2 className="tasks__title" >Your tasks:</h2>
-      {tasks.map( task => 
-        <Task task={task}/>
-      )}
-      <button className="task__button-add">
-        <span  className="task__button-add-inner">Add task</span>
-      </button>
+      {tasks.map( task => <Task task={task}/> )}
+      <ButtonAdd onClick={openEditor}>Add task</ButtonAdd>
+      
+      <MyInput 
+        // value={settings.short} 
+        // getTime={getShort}
+        type="text" placeholder="Enter your task..."/>
+      <MyInput 
+        // value={settings.short} 
+        // getTime={getShort}
+        type="text" placeholder="Note..."/>
     </div>
   );
 }

@@ -9,11 +9,10 @@
 
 #root{
     width: 100vw;
-    height: 100vh;
     display:flex;
-    align-items: center;
     justify-content: center;
     background-color: #C9E4CA;
+    padding: 50px 0;
 }
 
 .clock{
@@ -24,7 +23,7 @@
 
 .clock span{
     display:inline-block;
-    width:115px;
+    
 }
 
 .clock__minutes{
@@ -84,7 +83,7 @@
 .tasks__title{
     display: inline-block;
     margin: 15px 0 0 0;
-    font-size: 26px;
+    font-size: 18px;
     color:#2a5158;
 }
 
@@ -97,9 +96,6 @@
     padding:8px 12px;
     margin: 10px 0;
 }
-
-
-
 
 .task__label{
     display:flex;
@@ -121,76 +117,5 @@
 .task__image{
     width:20px;
 }
-.task__custom-checkbox{
-    display: inline-block;
-    position:relative;
-    top: 6px;
-    left:0;
-    width:18px;
-    height:18px;
-    border: 0 solid black;
-    border-radius: 3px;
-    background-color: white;
-    transition:.2s;
-}
-
-.task__custom-checkbox::before{
-    content: "";
-    position: absolute;
-    background-image: url("../assets/tick.svg");
-    background-size:18px 18px;
-    top:calc(50% - 9px);
-    left:calc(50% - 9px);
-    display:block;
-    width:18px;
-    height:18px;
-    border-radius: 2px;
-    background-color: rgb(90, 182, 90);
-    opacity:0;
-    transition:.2s;
-}
-
-.task__custom-checkbox:hover{
-    transition:.2s;
-    background-color: rgb(150, 212, 150);
-    transform:scale(1.1);
-}
-
-#checkbox-done:checked + .task__custom-checkbox::before{
-    opacity:1;
-    transition:.2s;
-}
 
 
-.task__button-add{
-    width:100%;
-    position:relative;
-    top:0;
-    left:0;
-    padding: 20px 0 20px 18px;
-    border: 4px dashed #2a5158;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
-    font-weight: 600;
-    font-size: 13px;
-    color:white;
-    transition: .2s;
-}
-
-.task__button-add:hover{
-    transition: .2s;
-    transform: scale(1.03);
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.task__button-add-inner::before{
-    content: "";
-    display:inline-block;
-    position:absolute;
-    top:calc(50% - 10px);
-    left:calc(50% - 40px);
-    background-image: url("../assets/plus-add.svg");
-    background-size:18px 18px;
-    height:18px;
-    width: 18px;
-}
