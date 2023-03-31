@@ -78,8 +78,6 @@
     border-radius: 5px;
 }
 
-
-
 .tasks__title{
     display: inline-block;
     margin: 15px 0 0 0;
@@ -118,4 +116,25 @@
     width:20px;
 }
 
+.editor__block{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding:10px 10px 0px 10px;
+    border-radius: 10px;
+    height:140px;
+}
+
+.editor__buttons-block{
+    display:flex;
+    justify-content:space-between;
+    margin-top: 5px;
+}
+.editor__buttons-block div{
+    display:flex;
+    width:35%;
+    justify-content:space-between;
+
+}
 

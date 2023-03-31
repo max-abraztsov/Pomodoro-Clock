@@ -6,6 +6,7 @@ import SimpleButton from "./components/UI/simpleButton/SimpleButton";
 import Task from "./components/Task";
 import ButtonAdd from "./components/UI/button-add/ButtonAdd";
 import MyInput from "./components/UI/input/MyInput";
+import Editor from "./components/Editor";
 
 function App() {
   // User time settings
@@ -43,16 +44,9 @@ function App() {
       <h2 className="tasks__title" >Your tasks:</h2>
       {tasks.map( task => <Task task={task}/> )}
       <ButtonAdd onClick={openEditor}>Add task</ButtonAdd>
-      
-      <MyInput 
-        // value={settings.short} 
-        // getTime={getShort}
-        type="text" placeholder="Enter your task..."/>
-      <MyInput 
-        // value={settings.short} 
-        // getTime={getShort}
-        type="text" placeholder="Note..."/>
-    </div>
+      <Editor deleteButton={true}/>
+
+   </div>   
   );
 }
 
