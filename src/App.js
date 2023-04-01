@@ -29,7 +29,8 @@ function App() {
   function deleteEditorButton(){
     setEditor(true);
   }
-  function saveEditorButton(){
+  function saveEditorButton(a){
+    setTasks([...tasks, a]);
     setEditor(true);
   }
   function cancelEditorButton(){
@@ -56,8 +57,7 @@ function App() {
         editor={editor} 
         cancelfunc={cancelEditorButton}
         savefunc={saveEditorButton}
-        deletefunc={deleteEditorButton} 
-        deleteButton={true}/>
+        deleteButton={false}/>
       <ButtonAdd editor={editor} action={handleClick}>Add task</ButtonAdd>
 
    </div>   
