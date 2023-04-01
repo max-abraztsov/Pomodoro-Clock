@@ -116,6 +116,10 @@
     width:20px;
 }
 
+.editor{
+    display:none;
+}
+
 .editor__block{
     display:flex;
     flex-direction:column;
@@ -124,6 +128,7 @@
     padding:10px 10px 0px 10px;
     border-radius: 10px;
     height:140px;
+    margin-bottom: 10px;
 }
 
 .editor__buttons-block{
@@ -138,3 +143,6 @@
 
 }
 
+.activeEditor{
+    display:block !important;
+}

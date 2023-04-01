@@ -1,10 +1,15 @@
 import React from 'react';
 import classes from "./ButtonAdd.module.css";
 
-const ButtonAdd = ({children}) => {
+
+const ButtonAdd = ({children, action, editor}) => {
+
+    let toggleClassCheck = editor ? "activeEditor" : "";
+    console.log(toggleClassCheck);
+
     return (
-        <button className={classes.task__button_add}>
-            <span  className={classes.task__button_add_inner}>{children}</span>
+        <button onClick={action} className={[classes.task__button_add, toggleClassCheck].join(" ")}>
+            <span className={classes.task__button_add_inner}>{children}</span>
         </button>
     );
 };

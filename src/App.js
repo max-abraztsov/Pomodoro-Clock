@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/style.css";
 import AllTimers from "./components/AllTimers";
 import Settings from "./components/Settings";
@@ -15,18 +15,27 @@ function App() {
   const [visible, setVisible] = useState(false);
 
   const [tasks, setTasks] = useState([
-    {state: false, title: "Pallet project", note: "Rewrite the code written in the project 'test-react'"},
-    {state: false, title: "Kanban", note: "Find a project with a kanban board and redo it"},
+    {id: 1680363507841, state: false, title: "Pallet project", note: "Rewrite the code written in the project 'test-react'"},
+    {id: 1680363507842, state: false, title: "Kanban", note: "Find a project with a kanban board and redo it"},
   ]);
 
-  const [editor, setEditor] = useState(false);
+  const [editor, setEditor] = useState(true);
+  const [classesAddButton, setClassesAddButton] = useState("");
 
-  function openEditor(){
-    setEditor(true)
-    if(editor){
-      
-    }
+  function handleClick(){
+    setEditor(editor => !editor);
   }
+
+  function deleteEditorButton(){
+    setEditor(true);
+  }
+  function saveEditorButton(){
+    setEditor(true);
+  }
+  function cancelEditorButton(){
+    setEditor(true);
+  }
+
 
   return (
     <div className="App">
@@ -42,9 +51,14 @@ function App() {
       <AllTimers settings={timeSettings}/>
 
       <h2 className="tasks__title" >Your tasks:</h2>
-      {tasks.map( task => <Task task={task}/> )}
-      <ButtonAdd onClick={openEditor}>Add task</ButtonAdd>
-      <Editor deleteButton={true}/>
+      {tasks.map( task => <Task key={task.id}  task={task}/> )}
+      <Editor 
+        editor={editor} 
+        cancelfunc={cancelEditorButton}
+        savefunc={saveEditorButton}
+        deletefunc={deleteEditorButton} 
+        deleteButton={true}/>
+      <ButtonAdd editor={editor} action={handleClick}>Add task</ButtonAdd>
 
    </div>   
   );
