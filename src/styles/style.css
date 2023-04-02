@@ -96,6 +96,7 @@
 }
 
 .task__label{
+    cursor: pointer;
     display:flex;
 }
 .task input{
@@ -113,7 +114,9 @@
     color:white;
 }
 .task__image{
-    width:20px;
+    cursor: pointer;
+    width:25px;
+    padding:5px 0 5px 5px;
 }
 
 .editor{

@@ -1,4 +1,5 @@
 .myButton{
+    cursor:pointer;
     position:relative;
     left:0;
     top:0;
@@ -13,12 +14,10 @@
     margin-bottom:20px;
     transition: 0.1s;
 }
-
 .myButton:hover{
     top:7px;
     transition: 0.2s;
 }
-
 .buttonBackground{
     position:absolute;
     top:7px;

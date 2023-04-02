@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles/style.css";
 import AllTimers from "./components/AllTimers";
 import Settings from "./components/Settings";
 import SimpleButton from "./components/UI/simpleButton/SimpleButton";
-import Task from "./components/Task";
-import ButtonAdd from "./components/UI/button-add/ButtonAdd";
-import MyInput from "./components/UI/input/MyInput";
-import Editor from "./components/Editor";
+import Tasks from "./components/Tasks";
+
 
 function App() {
   // User time settings
@@ -14,33 +12,8 @@ function App() {
   // State of modal with settings
   const [visible, setVisible] = useState(false);
 
-  const [tasks, setTasks] = useState([
-    {id: 1680363507841, state: false, title: "Pallet project", note: "Rewrite the code written in the project 'test-react'"},
-    {id: 1680363507842, state: false, title: "Kanban", note: "Find a project with a kanban board and redo it"},
-  ]);
-
-  const [editor, setEditor] = useState(true);
-  const [classesAddButton, setClassesAddButton] = useState("");
-
-  function handleClick(){
-    setEditor(editor => !editor);
-  }
-
-  function deleteEditorButton(){
-    setEditor(true);
-  }
-  function saveEditorButton(a){
-    setTasks([...tasks, a]);
-    setEditor(true);
-  }
-  function cancelEditorButton(){
-    setEditor(true);
-  }
-
-
   return (
     <div className="App">
-      <SimpleButton action={() => setVisible(true)}>Settings</SimpleButton>
       <Settings 
         settings={timeSettings} 
         modal={visible}
@@ -49,17 +22,9 @@ function App() {
         getShort={(e) => setTimeSettings({...timeSettings, short : e.target.value})}
         getLong={(e) => setTimeSettings({...timeSettings, long : e.target.value})}
       ></Settings>
+      <SimpleButton action={() => setVisible(true)}>Settings</SimpleButton>
       <AllTimers settings={timeSettings}/>
-
-      <h2 className="tasks__title" >Your tasks:</h2>
-      {tasks.map( task => <Task key={task.id}  task={task}/> )}
-      <Editor 
-        editor={editor} 
-        cancelfunc={cancelEditorButton}
-        savefunc={saveEditorButton}
-        deleteButton={false}/>
-      <ButtonAdd editor={editor} action={handleClick}>Add task</ButtonAdd>
-
+      <Tasks/>
    </div>   
   );
 }

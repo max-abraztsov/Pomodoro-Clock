@@ -1,5 +1,6 @@
 .task__button_add{
     display:none;
+    cursor: pointer;
     width:100%;
     position:relative;
     top:0;

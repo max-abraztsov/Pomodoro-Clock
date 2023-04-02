@@ -1,4 +1,5 @@
 .myButton{
+    cursor: pointer;
     font-size: 12px;
     font-weight: 500;
     color: #f3f8f4;
@@ -9,7 +10,6 @@
     margin-bottom:10px;
     transition: 0.1s;
 }
-
 .myButton:hover{
     transform: scale(1.05);
     transition: 0.2s;

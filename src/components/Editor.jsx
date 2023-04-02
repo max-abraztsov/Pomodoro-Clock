@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MyInput from './UI/input/MyInput';
 import SimpleButton from './UI/simpleButton/SimpleButton';
 
-const Editor = ({deleteButton, editor, cancelfunc, savefunc, deletefunc}) => {
+const Editor = ({deleteButton, task, editor, cancelfunc, savefunc, deletefunc}) => {
 
     function addButton (){
         if (deleteButton) {
@@ -12,18 +12,40 @@ const Editor = ({deleteButton, editor, cancelfunc, savefunc, deletefunc}) => {
 
     let toggleClassCheck = editor ? "" : "activeEditor";
 
-
     const [newTask, setNewTask] = useState({
-        state: false,
         title: "",
-        note: "",
+        note: "", 
     })
 
-    function transmissionTask(){
-        setNewTask({...newTask, id: Date.now()});
-        savefunc(newTask);
-        setNewTask({state: false, title: "", note: ""});
+    useEffect(() => {
+        //console.log(task);
+        if (task) setNewTask(task);  
+        //else setNewTask({title: "", note: ""});
+    }, []);
 
+    function saveTransmissionTask(){
+        const taskForAdd = { 
+            id: Date.now(), 
+            state: false, 
+            title: newTask.title, 
+            note: newTask.note
+        }
+        if (task) {
+            taskForAdd.id = newTask.id;
+            savefunc(taskForAdd);
+        } else {
+            savefunc(taskForAdd);
+            setNewTask({ title: "", note: ""});  
+        }   
+    }
+
+    function cancelCreateTask(){
+        if (task) {
+            savefunc(task);
+        } else {
+            cancelfunc();
+            setNewTask({ title: "", note: ""}); 
+        }     
     }
     
     return (
@@ -43,8 +65,8 @@ const Editor = ({deleteButton, editor, cancelfunc, savefunc, deletefunc}) => {
                     {addButton()}
                     
                     <div>
-                        <SimpleButton action={cancelfunc}>Cancel</SimpleButton>
-                        <SimpleButton action={transmissionTask}>Save</SimpleButton>
+                        <SimpleButton action={cancelCreateTask}>Cancel</SimpleButton>
+                        <SimpleButton action={saveTransmissionTask}>Save</SimpleButton>
                     </div>
                 
                 </div>
