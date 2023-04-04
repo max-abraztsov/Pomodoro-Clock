@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react';
 import MyInput from './UI/input/MyInput';
 import SimpleButton from './UI/simpleButton/SimpleButton';
 
-const Editor = ({deleteButton, task, editor, cancelfunc, savefunc, deletefunc}) => {
+const Editor = ({deleteButton, closeEditor, task, editor, cancelfunc, savefunc, deletefunc}) => {
 
     function addButton (){
         if (deleteButton) {
-            return (<SimpleButton action={deletefunc}>Delete</SimpleButton>);
+            return (<SimpleButton action={deleteTask}>Delete</SimpleButton>);
         }
-    }
+    } 
+
+    useEffect(() => {
+        if (task) setNewTask(task);
+        else setNewTask({title: "", note: ""});  
+    }, []);
 
     let toggleClassCheck = editor ? "" : "activeEditor";
 
@@ -16,12 +21,6 @@ const Editor = ({deleteButton, task, editor, cancelfunc, savefunc, deletefunc}) 
         title: "",
         note: "", 
     })
-
-    useEffect(() => {
-        //console.log(task);
-        if (task) setNewTask(task);  
-        //else setNewTask({title: "", note: ""});
-    }, []);
 
     function saveTransmissionTask(){
         const taskForAdd = { 
@@ -33,6 +32,7 @@ const Editor = ({deleteButton, task, editor, cancelfunc, savefunc, deletefunc}) 
         if (task) {
             taskForAdd.id = newTask.id;
             savefunc(taskForAdd);
+            closeEditor();
         } else {
             savefunc(taskForAdd);
             setNewTask({ title: "", note: ""});  
@@ -42,10 +42,17 @@ const Editor = ({deleteButton, task, editor, cancelfunc, savefunc, deletefunc}) 
     function cancelCreateTask(){
         if (task) {
             savefunc(task);
+            setNewTask(task);
+            closeEditor();
         } else {
             cancelfunc();
             setNewTask({ title: "", note: ""}); 
         }     
+    }
+
+    function deleteTask(){
+        deletefunc(task);
+        closeEditor();
     }
     
     return (

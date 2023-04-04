@@ -16,14 +16,6 @@ const Tasks = () => {
         setEditor(editor => !editor);
     }
 
-    // function deleteEditorButton(){
-    //     setEditor(true);
-    // }
-
-    function cancelEditorButton(){
-        setEditor(true);
-    }
-
     function saveEditorButtonRedact(newTask){
         tasks.forEach( (task, index) => {
             if(task.id === newTask.id){
@@ -32,6 +24,13 @@ const Tasks = () => {
         });
     }
 
+    function deleteEditorButtonRedact(taskToDelete){
+        setTasks(tasks.filter(task => task.id !== taskToDelete.id));
+    }
+
+    function cancelEditorButton(){
+        setEditor(true);
+    }
 
     function saveEditorButtonAdd(newTask){
         setTasks([...tasks, newTask]);
@@ -42,7 +41,12 @@ const Tasks = () => {
     return (
         <div>
            <h2 className="tasks__title" >Your tasks:</h2>
-            {tasks.map( task => <Task key={task.id}  task={task} savefunc={saveEditorButtonRedact}/> )}
+            {tasks.map( task => <Task 
+            key={task.id} 
+            task={task} 
+            savefunc={saveEditorButtonRedact}
+            deletefunc={deleteEditorButtonRedact}
+            /> )}
             <Editor 
                 editor={editor} 
                 cancelfunc={cancelEditorButton}

@@ -18,9 +18,9 @@ function App() {
         settings={timeSettings} 
         modal={visible}
         setModal={setVisible}
-        getFocus={(e) => setTimeSettings({...timeSettings, focus : e.target.value})}
-        getShort={(e) => setTimeSettings({...timeSettings, short : e.target.value})}
-        getLong={(e) => setTimeSettings({...timeSettings, long : e.target.value})}
+        getFocus={(e) => e.target.value > 0 ? setTimeSettings({...timeSettings, focus : e.target.value}) : ""}
+        getShort={(e) => e.target.value > 0 ? setTimeSettings({...timeSettings, short : e.target.value}) : ""}
+        getLong={(e) => e.target.value > 0 ? setTimeSettings({...timeSettings, long : e.target.value}) : ""}
       ></Settings>
       <SimpleButton action={() => setVisible(true)}>Settings</SimpleButton>
       <AllTimers settings={timeSettings}/>

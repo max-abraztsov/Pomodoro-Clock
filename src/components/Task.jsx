@@ -3,9 +3,13 @@ import Icon from "../assets/icon.svg";
 import MyCheckbox from './UI/checkbox/MyCheckbox';
 import Editor from './Editor';
 
-const Task = ({task, action, savefunc}) => {
+const Task = ({task, savefunc, deletefunc}) => {
 
     const [editor, setEditor] = useState(true);
+
+    function handleClick(){
+        setEditor(editor => !editor);
+    }
     
     return (
         <div>
@@ -17,9 +21,19 @@ const Task = ({task, action, savefunc}) => {
                         <p className="task__note">{task.note}</p>
                     </div>
                 </label>
-                <img className="task__image" onClick={() => setEditor(editor => !editor)} src={Icon} alt="three dots settings"/>
+                <img 
+                    className="task__image" 
+                    onClick={handleClick} 
+                    src={Icon} 
+                    alt="three dots settings"/>
             </div>
-            <Editor editor={editor} deleteButton={true} savefunc={savefunc} task={task}/>
+            <Editor 
+                editor={editor} 
+                deleteButton={true} 
+                closeEditor={handleClick} 
+                savefunc={savefunc}
+                deletefunc={deletefunc} 
+                task={task}/>
         </div>
     );
 };
