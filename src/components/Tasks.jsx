@@ -36,7 +36,6 @@ const Tasks = () => {
         setTasks([...tasks, newTask]);
         setEditor(true);
     }
-    
 
     return (
         <div>

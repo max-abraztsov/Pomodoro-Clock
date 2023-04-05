@@ -1,31 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles/style.css";
-import AllTimers from "./components/AllTimers";
-import Settings from "./components/Settings";
-import SimpleButton from "./components/UI/simpleButton/SimpleButton";
-import Tasks from "./components/Tasks";
-
+import { BrowserRouter, Route, Routes} from "react-router-dom";
+import Pomodoro from "./pages/Pomodoro";
+import Information from "./pages/Information";
+import Navbar from "./components/UI/navbar/Navbar";
 
 function App() {
-  // User time settings
-  const [timeSettings, setTimeSettings] = useState({focus: 25, short: 5, long: 10}); 
-  // State of modal with settings
-  const [visible, setVisible] = useState(false);
-
+  
   return (
-    <div className="App">
-      <Settings 
-        settings={timeSettings} 
-        modal={visible}
-        setModal={setVisible}
-        getFocus={(e) => e.target.value > 0 ? setTimeSettings({...timeSettings, focus : e.target.value}) : ""}
-        getShort={(e) => e.target.value > 0 ? setTimeSettings({...timeSettings, short : e.target.value}) : ""}
-        getLong={(e) => e.target.value > 0 ? setTimeSettings({...timeSettings, long : e.target.value}) : ""}
-      ></Settings>
-      <SimpleButton action={() => setVisible(true)}>Settings</SimpleButton>
-      <AllTimers settings={timeSettings}/>
-      <Tasks/>
-   </div>   
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route exact path='/' element={<Pomodoro />} />
+        <Route path='/information' element={<Information />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

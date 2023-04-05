@@ -7,15 +7,19 @@
     box-sizing: border-box;
 }
 
-#root{
+.timer__section{
     width: 100vw;
+    min-height: 100vh;
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: #C9E4CA;
-    padding: 50px 0;
+    padding: 50px 10px 50px 10px;
 }
 
 .clock{
+    position:relative;
+    width: 100%;
     font-size: 90px;
     font-weight: 600;
     color: #55828B;
@@ -23,15 +27,26 @@
 
 .clock span{
     display:inline-block;
-    
 }
 
 .clock__minutes{
+    position:absolute;
+    top: 0;
+    left:calc(50% - 125px);
     text-align:right;
 }
 
 .clock__seconds{
+    position:absolute;
+    top: 0;
+    left:calc(50% + 15px);
     text-align:left;
+}
+
+.clock__dots{
+    position:relative;
+    top: 0;
+    left:calc(50% - 12px);
 }
 
 .settings__items-inputs{
@@ -143,9 +158,58 @@
     display:flex;
     width:35%;
     justify-content:space-between;
-
 }
 
 .activeEditor{
     display:block !important;
 }
+
+.information__section{
+    padding: 50px 100px;
+}
+
+.information__section h2 {
+    display: inline-block;
+    color: #2A5158;
+    margin-bottom: 20px;
+}
+
+.information__title{
+    display:inline-block;
+    position:relative;
+    color: #2A5158;
+    margin: 10px 0;   
+}
+
+.information__title::before{
+    content: "";
+    display:inline-block;
+    position: absolute;
+    top: 4px;
+    left:-10px;
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #C9E4CA;
+}
+
+.information__section li{
+    color:#7B828B;
+    list-style: none;
+    position:relative;
+    top:0;
+    left: 12px;
+}
+
+.information__section li::before{
+    content: "";
+    display:inline-block;
+    position: absolute;
+    top: 9px;
+    left:-17px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #C9E4CA;
+}
+

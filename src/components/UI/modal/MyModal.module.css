@@ -8,7 +8,6 @@
     display:none;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
 .myModalContent{
     position:relative;
     padding: 25px;
@@ -16,7 +15,6 @@
     border-radius: 16px;
     min-width: 250px;
 }
-
 .myModalClose{
     cursor:pointer;
     position:absolute;
@@ -26,7 +24,6 @@
     font-weight: 600;
     color: #55828B;
 }
-
 .myModal.active{
     display: flex;
     justify-content: center;

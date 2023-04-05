@@ -8,7 +8,9 @@ const Clock = ({minutes, seconds}) => {
 
     return (
         <div className='clock'>
-            <span className="clock__minutes">{minutes}</span>:<span className="clock__seconds">{seconds}</span>
+            <span className="clock__minutes">{minutes}</span>
+            <span className="clock__dots">:</span>
+            <span className="clock__seconds">{seconds}</span>
         </div>
     );
 };

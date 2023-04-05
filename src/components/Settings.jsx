@@ -8,8 +8,7 @@ const Settings = ({settings, modal, setModal, getFocus, getShort, getLong}) => {
         <div>
             <MyModal
                 visible={modal}
-                setVisible={setModal}
-                >
+                setVisible={setModal}>
                 <div className="settings__items-inputs">
                     <h3>Time (minutes)</h3>
                     <p>Pomodoro:</p>

@@ -1,14 +1,11 @@
 import React from 'react';
 import classes from './MyInput.module.css';
 
-const MyInput = ({getValue, value, id, type, placeholder}) => {
+const MyInput = (props) => { //getValue, value, id, type, placeholder
     return (
-        <input className={classes.myInput} 
-        id={id} 
-        type={type} 
-        value={value} 
-        onChange={getValue}
-        placeholder={placeholder}
+        <input {...props} 
+            className={classes.myInput} 
+            onChange={props.getValue}
         />
     );
 };

@@ -13,9 +13,9 @@ const MyModal = ({children, visible, setVisible}) => {
         <div className={rootClasses.join(" ")} onClick={() => setVisible(false)}>
             <div className={classes.myModalContent} onClick={(e) => e.stopPropagation()}>
                 <div 
-                className={classes.myModalClose} 
-                onClick={() => {setVisible(false)}}
-                >Close</div>
+                    className={classes.myModalClose} 
+                    onClick={() => {setVisible(false)}}>
+                Close</div>
                 {children}
             </div>
         </div>

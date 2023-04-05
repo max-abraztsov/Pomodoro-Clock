@@ -8,6 +8,8 @@ To get started with this application, simply clone this repository onto your loc
 
 ### `npm install --save react-tabs`
 
+### `npm install --save react-router-dom`
+
 ### `npm start`
 
 This will install all the necessary dependencies and start the application on your local server.
@@ -21,6 +23,7 @@ Once you have the application running, simply select the duration of your Pomodo
 This application was built using React, and also utilizes the following libraries:
 
 * react-tabs
+* react-router-dom
 
 ## Contributing
 If you would like to contribute to this project, please feel free to fork this repository and submit a pull request.
