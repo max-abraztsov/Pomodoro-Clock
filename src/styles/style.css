@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
 *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
 .timer__section{
     width: 100vw;
     min-height: 100vh;
@@ -16,7 +14,6 @@
     background-color: #C9E4CA;
     padding: 50px 10px 50px 10px;
 }
-
 .clock{
     position:relative;
     width: 100%;
@@ -24,50 +21,42 @@
     font-weight: 600;
     color: #55828B;
 }
-
 .clock span{
     display:inline-block;
 }
-
 .clock__minutes{
     position:absolute;
     top: 0;
     left:calc(50% - 125px);
     text-align:right;
 }
-
 .clock__seconds{
     position:absolute;
     top: 0;
     left:calc(50% + 15px);
     text-align:left;
 }
-
 .clock__dots{
     position:relative;
     top: 0;
     left:calc(50% - 12px);
 }
-
 .settings__items-inputs{
     display:flex;
     flex-direction:column;
     width: 100%;
 }
-
 .settings__items-inputs h3, p{
     color: #55828B;
 }
-
 .timer{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    width: 340px;
+    max-width: 340px;
     height: 250px;
 }
-
 .tabsAndTimers{
     display:flex;
     justify-content:center;
@@ -81,25 +70,21 @@
     background-color: rgba( 0, 0 , 0, 0.2);
     outline: none;
 }
-
 .tabList{
     display:flex;
     justify-content: center;
 }
-
 .tabItem{
     list-style: none;
     padding: 1px 8px;
     border-radius: 5px;
 }
-
 .tasks__title{
     display: inline-block;
     margin: 15px 0 0 0;
     font-size: 18px;
     color:#2a5158;
 }
-
 .task{
     display:flex;
     align-items:flex-start;
@@ -109,7 +94,6 @@
     padding:8px 12px;
     margin: 10px 0;
 }
-
 .task__label{
     cursor: pointer;
     display:flex;
@@ -133,11 +117,9 @@
     width:25px;
     padding:5px 0 5px 5px;
 }
-
 .editor{
     display:none;
 }
-
 .editor__block{
     display:flex;
     flex-direction:column;
@@ -148,7 +130,6 @@
     height:140px;
     margin-bottom: 10px;
 }
-
 .editor__buttons-block{
     display:flex;
     justify-content:space-between;
@@ -159,28 +140,23 @@
     width:35%;
     justify-content:space-between;
 }
-
 .activeEditor{
     display:block !important;
 }
-
 .information__section{
     padding: 50px 100px;
 }
-
 .information__section h2 {
     display: inline-block;
     color: #2A5158;
     margin-bottom: 20px;
 }
-
 .information__title{
     display:inline-block;
     position:relative;
     color: #2A5158;
     margin: 10px 0;   
 }
-
 .information__title::before{
     content: "";
     display:inline-block;
@@ -192,7 +168,6 @@
     border-radius: 2px;
     background-color: #C9E4CA;
 }
-
 .information__section li{
     color:#7B828B;
     list-style: none;
@@ -200,7 +175,6 @@
     top:0;
     left: 12px;
 }
-
 .information__section li::before{
     content: "";
     display:inline-block;
@@ -213,3 +187,40 @@
     background-color: #C9E4CA;
 }
 
+@media (max-width: 500px){
+    .tabsAndTimers{
+        width: 100%;
+    }
+    .timer__section{
+        padding: 20px 10px 30px 10px;
+    }
+    .tabItem{
+        font-size: 14px;
+        padding: 2px 6px; 
+    }
+    
+}
+@media (max-width: 340px){
+    .clock{
+        font-size: 70px;
+    }
+    .clock__minutes{
+        left:calc(50% - 100px);
+    }
+    .clock__seconds{
+        left:calc(50% + 12px);
+    }
+    .clock__dots{
+        left:calc(50% - 8px);
+    }
+}
+@media (max-width: 768px){
+    .information__section{
+        padding: 50px 30px;
+    }
+}
+@media (max-width: 500px){
+    .information__section{
+        padding: 20px 20px;
+    }
+}

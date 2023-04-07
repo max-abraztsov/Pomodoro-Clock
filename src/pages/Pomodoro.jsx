@@ -8,7 +8,7 @@ import Tasks from "../components/Tasks";
 
 const Pomodoro = () => {
     // User time settings
-  const [timeSettings, setTimeSettings] = useState({focus: 25, short: 5, long: 10}); 
+  const [timeSettings, setTimeSettings] = useState({focus: 1, short: 5, long: 10}); 
   // State of modal with settings
   const [visible, setVisible] = useState(false);
 

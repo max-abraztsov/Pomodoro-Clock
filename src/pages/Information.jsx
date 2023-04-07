@@ -6,14 +6,16 @@ const Information = () => {
             <h2>Increase your productivity with an online Pomodoro Clock!</h2>
             <h3 className='information__title'> What is Pomodoro Clock?</h3>
             <p className='information__text'>Pomodoro Clock is a browser-based Pomodoro Timer that can be customized to suit your needs.
-            You can use Pomofocus on both desktop and mobile browsers and adjust the settings to your liking.
-            Pomodoro Clock is designed to assist you in concentrating on any task, whether it's studying, writing, or coding. 
-            Pomodoro Clock is based on the Pomodoro Technique, a time management approach developed by Francesco Cirillo.</p>
+                You can use Pomofocus on both desktop and mobile browsers and adjust the settings to your liking.
+                Pomodoro Clock is designed to assist you in concentrating on any task, whether it's studying, writing, or coding. 
+                Pomodoro Clock is based on the Pomodoro Technique, a time management approach developed by Francesco Cirillo.
+            </p>
             <h3 className='information__title'> What is Pomodoro Technique?</h3>
             <p className='information__text'>Francesco Cirillo developed the Pomodoro Technique as a means of enhancing productivity when working and studying.
-            The Pomodoro Technique employs a timer to divide work into periods, typically lasting 25 minutes, separated by brief pauses.
-            Each work period is referred to as a pomodoro, which is derived from the Italian term for "tomato," after the tomato-shaped kitchen 
-            timer that Cirillo utilized when he was a student.</p>
+                The Pomodoro Technique employs a timer to divide work into periods, typically lasting 25 minutes, separated by brief pauses.
+                Each work period is referred to as a pomodoro, which is derived from the Italian term for "tomato," after the tomato-shaped kitchen 
+                timer that Cirillo utilized when he was a student.
+            </p>
             <h3 className='information__title'>How to use the Pomodoro Clock?</h3>
             <p className='information__text'>To use the Pomodoro Clock, follow these instructions:</p>
             <ul>

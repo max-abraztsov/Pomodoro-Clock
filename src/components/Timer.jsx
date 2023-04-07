@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Clock from './Clock';
 import MyButton from './UI/button/MyButton';
+import clickAudio from "../audio/click.mp3";
+import endAlarm from "../audio/alarm.mp3";
+import MyModal from './UI/modal/MyModal';
 
 
 const Timer = ({setting, id}) => {
@@ -12,8 +15,10 @@ const Timer = ({setting, id}) => {
 
     const [timerId, setTimerId] = useState(0);
 
-    useEffect(() => setTime({...time, minutes: setting}), [setting])
-    
+    const [modal, setModal] = useState(0);
+
+    useEffect(() => setTime({...time, minutes: setting}), [setting]);
+
     // Logic for calculating residual time 
     useEffect(() => {
         let intervalId = null;
@@ -25,7 +30,15 @@ const Timer = ({setting, id}) => {
                 minutes: Math.floor( distanse / (60*1000)),
                 seconds: Math.floor( distanse % (60*1000) / 1000),
                 })
-                setTimerId(intervalId);
+                if (distanse <= 0){
+                    clearInterval(intervalId);
+                    new Audio(endAlarm).play();
+                    setTime({...time, minutes: setting, seconds: 0,});
+                    setButtonState({ state: false, text: "START",});
+                    setModal(true);
+                } else {
+                    setTimerId(intervalId);
+                }
             }, 1000);
         } else clearInterval(timerId);
     }, [buttonState])
@@ -33,12 +46,14 @@ const Timer = ({setting, id}) => {
     // Toggle function for button "Start/Pause"
     function toggleStateOfButton(e){
         e.preventDefault();
+        new Audio(clickAudio).play();
         if (!buttonState.state) setButtonState({...buttonState, state: true, text: "PAUSE"});
         else setButtonState({...buttonState, state: false, text: "START"});
     }
 
     return (
         <div id={id} className='timer'>
+            <MyModal visible={modal} setVisible={setModal}>Time's up!</MyModal>
             <Clock minutes={time.minutes} seconds={time.seconds}/>
             <MyButton action={toggleStateOfButton}>{buttonState.text}</MyButton>
         </div>

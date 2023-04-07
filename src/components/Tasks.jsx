@@ -6,8 +6,9 @@ import ButtonAdd from './UI/button-add/ButtonAdd';
 const Tasks = () => {
 
     const [tasks, setTasks] = useState([
-        {id: 1680363507841, state: false, title: "Pallet project", note: "Rewrite the code written in the project 'test-react'"},
-        {id: 1680363507842, state: false, title: "Kanban", note: "Find a project with a kanban board and redo it"},
+        {id: 1680363507841, state: false, title: "Complete the header", note: ""},
+        {id: 1680363507842, state: false, title: "Make an animation for button", note: ""},
+        {id: 1680363507843, state: false, title: "Finalize responsive design", note: "For clock elements and for tabs"},
     ]);
 
     const [editor, setEditor] = useState(true);
