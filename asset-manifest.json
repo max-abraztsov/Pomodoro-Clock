@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Pomodoro-Clock/home/static/css/main.61b57f8b.css",
-    "main.js": "/Pomodoro-Clock/home/static/js/main.8fe3aee9.js",
-    "static/media/alarm.mp3": "/Pomodoro-Clock/home/static/media/alarm.2d93f3951ba1443499ff.mp3",
-    "static/media/click.mp3": "/Pomodoro-Clock/home/static/media/click.87c75fd254abcaec9e2b.mp3",
-    "index.html": "/Pomodoro-Clock/home/index.html",
-    "static/media/plus-add.svg": "/Pomodoro-Clock/home/static/media/plus-add.5591e4bc4e85a78ad0cc.svg",
-    "static/media/tick.svg": "/Pomodoro-Clock/home/static/media/tick.7b50628952a7b8445f28.svg",
-    "static/media/icon.svg": "/Pomodoro-Clock/home/static/media/icon.637f07a965f800f29abb29c22e6d62f2.svg",
-    "main.61b57f8b.css.map": "/Pomodoro-Clock/home/static/css/main.61b57f8b.css.map",
-    "main.8fe3aee9.js.map": "/Pomodoro-Clock/home/static/js/main.8fe3aee9.js.map"
+    "main.css": "/Pomodoro-Clock/static/css/main.63d273e1.css",
+    "main.js": "/Pomodoro-Clock/static/js/main.d7965cd1.js",
+    "static/media/alarm.mp3": "/Pomodoro-Clock/static/media/alarm.2d93f3951ba1443499ff.mp3",
+    "static/media/click.mp3": "/Pomodoro-Clock/static/media/click.87c75fd254abcaec9e2b.mp3",
+    "index.html": "/Pomodoro-Clock/index.html",
+    "static/media/plus-add.svg": "/Pomodoro-Clock/static/media/plus-add.5591e4bc4e85a78ad0cc.svg",
+    "static/media/tick.svg": "/Pomodoro-Clock/static/media/tick.7b50628952a7b8445f28.svg",
+    "static/media/icon.svg": "/Pomodoro-Clock/static/media/icon.637f07a965f800f29abb29c22e6d62f2.svg",
+    "main.63d273e1.css.map": "/Pomodoro-Clock/static/css/main.63d273e1.css.map",
+    "main.d7965cd1.js.map": "/Pomodoro-Clock/static/js/main.d7965cd1.js.map"
   },
   "entrypoints": [
-    "static/css/main.61b57f8b.css",
-    "static/js/main.8fe3aee9.js"
+    "static/css/main.63d273e1.css",
+    "static/js/main.d7965cd1.js"
   ]
 }
