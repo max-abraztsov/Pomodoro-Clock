@@ -9,6 +9,7 @@
     padding:5px 10px;
     margin-bottom:10px;
     transition: 0.1s;
+    margin-right: 10px;
 }
 .myButton:hover{
     transform: scale(1.05);

@@ -5,8 +5,10 @@ import Editor from './Editor';
 
 const Task = ({task, savefunc, deletefunc}) => {
 
+    // State of editor 
     const [editor, setEditor] = useState(true);
 
+    // Shows and hides the task editor
     function handleClick(){
         setEditor(editor => !editor);
     }

@@ -7,7 +7,7 @@ const Navbar = () => {
         <nav className={classes.navbar}>
             <ul className={classes.navbar__links}>
                 <Link className={classes.navbar__link} to="/">Pomodoro</Link>
-                <Link className={classes.navbar__link} to="/information">Information</Link>
+                <Link className={classes.navbar__link} to="/about-technique">About technique</Link>
             </ul>
         </nav>
     );

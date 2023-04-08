@@ -14,10 +14,6 @@
     margin-bottom:20px;
     transition: 0.1s;
 }
-.myButton:hover{
-    top:7px;
-    transition: 0.2s;
-}
 .buttonBackground{
     position:absolute;
     top:7px;
@@ -32,4 +28,8 @@
     position:relative;
     top:0;
     left: 0;
+}
+.active{
+    top:7px;
+    transition: 0.2s;
 }

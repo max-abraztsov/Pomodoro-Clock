@@ -3,7 +3,7 @@ import React from 'react';
 const Information = () => {
     return (
         <section className="information__section">
-            <h2>Increase your productivity with an online Pomodoro Clock!</h2>
+            <h2>Increase your productivity with an online Pomodoro Clock!</h2><br/>
             <h3 className='information__title'> What is Pomodoro Clock?</h3>
             <p className='information__text'>Pomodoro Clock is a browser-based Pomodoro Timer that can be customized to suit your needs.
                 You can use Pomofocus on both desktop and mobile browsers and adjust the settings to your liking.

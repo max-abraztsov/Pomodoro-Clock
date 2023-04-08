@@ -4,7 +4,7 @@ import SimpleButton from './UI/simpleButton/SimpleButton';
 
 const Editor = ({deleteButton, closeEditor, task, editor, cancelfunc, savefunc, deletefunc}) => {
 
-    function addButton (){
+    function addButton (){ // add a delete button for changing task
         if (deleteButton) return (<SimpleButton action={deleteTask}>Delete</SimpleButton>);
     } 
 
@@ -25,11 +25,11 @@ const Editor = ({deleteButton, closeEditor, task, editor, cancelfunc, savefunc, 
                 title: newTask.title, 
                 note: newTask.note
             }
-            if (task) {
+            if (task) { // work if the old one is changed
                 taskForAdd.id = newTask.id;
                 savefunc(taskForAdd);
                 closeEditor();
-            } else {
+            } else { // work when a new one is added
                 savefunc(taskForAdd);
                 setNewTask({ title: "", note: ""});  
             } 
@@ -37,11 +37,11 @@ const Editor = ({deleteButton, closeEditor, task, editor, cancelfunc, savefunc, 
     }
 
     function cancelCreateTask(){
-        if (task) {
+        if (task) { // work if the old one is changed
             savefunc(task);
             setNewTask(task);
             closeEditor();
-        } else {
+        } else { // work when a new one is added
             cancelfunc();
             setNewTask({ title: "", note: ""}); 
         }     
@@ -66,11 +66,9 @@ const Editor = ({deleteButton, closeEditor, task, editor, cancelfunc, savefunc, 
                     type="text" 
                     placeholder="Note..."/>
                 <div className="editor__buttons-block">
+                    <SimpleButton action={saveTransmissionTask}>Save</SimpleButton>
+                    <SimpleButton action={cancelCreateTask}>Cancel</SimpleButton>
                     {addButton()}
-                    <div>
-                        <SimpleButton action={cancelCreateTask}>Cancel</SimpleButton>
-                        <SimpleButton action={saveTransmissionTask}>Save</SimpleButton>
-                    </div>
                 </div>
             </div>
         </div>

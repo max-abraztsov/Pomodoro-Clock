@@ -26,8 +26,7 @@ const Pomodoro = () => {
         <SimpleButton action={() => setVisible(true)}>Settings</SimpleButton>
         <AllTimers settings={timeSettings}/>
         <Tasks/>
-      </section>
-      
+      </section> 
    </div>   
   );
 };

@@ -12,7 +12,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route exact path='/' element={<Pomodoro />} />
-        <Route path='/information' element={<Information />} />
+        <Route path='/about-technique' element={<Information />} />
       </Routes>
     </BrowserRouter>
   );

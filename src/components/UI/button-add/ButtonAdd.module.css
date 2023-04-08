@@ -1,7 +1,7 @@
 .task__button_add{
     display:none;
     cursor: pointer;
-    width:100%;
+    width:440px;
     position:relative;
     top:0;
     left:0;
@@ -13,6 +13,7 @@
     font-size: 13px;
     color:white;
     transition: .2s;
+    margin: 10px 0;
 }
 
 .task__button_add:hover{
@@ -32,3 +33,10 @@
     height:18px;
     width: 18px;
 }
+
+@media (max-width: 480px){
+    .task__button_add{
+        width: 95vw;
+    }
+}
+
